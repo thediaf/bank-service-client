@@ -10,7 +10,7 @@
     <?php
     if (isset($_POST['method'])) 
     {
-        $client = new SoapClient("http://localhost:8020/BankService?wsdl");
+        $client = new SoapClient("http://192.168.5.51:8020/BankService?wsdl");
 
         if ($_POST['method'] == "xofToEuro") 
         {
