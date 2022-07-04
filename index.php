@@ -12,7 +12,7 @@
         $client = new SoapClient("http://localhost:8000/BankService?wsdl");
         if ($_POST['method'] == "conversion") 
         {
-            # code...
+            $result = $client->__soapCall("conversion", ["amount" => $_POST['amount']]);
         }
         else
         {
@@ -28,6 +28,11 @@
         <input type="submit" value="comptes" name="method">
     </form>
     <?php
+        if (isset($result)) {
+            
+            echo "Resultat: " . $_POST['amount'] . " = " . $result->return;
+
+        }
     if (isset($accounts)) {
         # code...
 ?>    
